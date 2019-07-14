@@ -285,7 +285,7 @@ export function doPurchaseUri(uri: string, saveFile: boolean = false, specificCo
   };
 }
 
-export function doFetchClaimsByChannel(uri: string, page: number = 1, pageSize: number = PAGE_SIZE) {
+export function doFetchClaimsByChannel(uri: string, page: number = 1, pageSize: number = PAGE_SIZE, orderBy: string[], releaseTime: string) {
   return (dispatch: Dispatch) => {
     dispatch({
       type: ACTIONS.FETCH_CHANNEL_CLAIMS_STARTED,
@@ -297,7 +297,8 @@ export function doFetchClaimsByChannel(uri: string, page: number = 1, pageSize: 
       page,
       page_size: pageSize,
       valid_channel_signature: true,
-      order_by: ['release_time'],
+      order_by: orderBy,
+      release_time: releaseTime,
     }).then(result => {
       const { items: claimsInChannel, page: returnedPage } = result;
 
