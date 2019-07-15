@@ -546,5 +546,8 @@
   "Invalid claim ID %s.": "Invalid claim ID %s.",
   "Invalid character %s in name: %s.": "Invalid character %s in name: %s.",
   "LBRY names cannot contain spaces or reserved symbols ($#@;/\"<>%{}|^~[]`)": "LBRY names cannot contain spaces or reserved symbols ($#@;/\"<>%{}|^~[]`)",
-  "No transactions.": "No transactions."
+  "No transactions.": "No transactions.",
+  "Today": "Today",
+  "This": "This",
+  "All time": "All time"
 }

@@ -31,12 +31,12 @@ type Props = {
 };
 
 function ChannelPage(props: Props) {
-  const { uri, title, cover, history, location, page, channelIsMine, thumbnail } = props;
+  const { uri, title, cover, history, location, page, channelIsMine, thumbnail, claim } = props;
   const { channelName } = parseURI(uri);
   const { search } = location;
   const urlParams = new URLSearchParams(search);
   const currentView = urlParams.get(PAGE_VIEW_QUERY) || undefined;
-
+  const { name, permanent_url: permanentUrl } = claim;
   const [editing, setEditing] = useState(false);
   const [thumbPreview, setThumbPreview] = useState(thumbnail);
   const [coverPreview, setCoverPreview] = useState(cover);
@@ -90,7 +90,7 @@ function ChannelPage(props: Props) {
             <Tab>{editing ? __('Editing Your Channel') : __('About')}</Tab>
             <div className="card__actions">
               <ShareButton uri={uri} />
-              <SubscribeButton uri={uri} />
+              <SubscribeButton uri={permanentUrl} />
             </div>
           </TabList>
 

@@ -73,6 +73,7 @@ function ClaimPreview(props: Props) {
     for (let i = 0; i < blackListedOutpoints.length; i += 1) {
       const outpoint = blackListedOutpoints[i];
       if (outpoint.txid === claim.txid && outpoint.nout === claim.nout) {
+        debugger;
         shouldHide = true;
         break;
       }
@@ -103,7 +104,7 @@ function ClaimPreview(props: Props) {
     return null;
   }
 
-  if (placeholder || isResolvingUri) {
+  if (placeholder && !claim) {
     return (
       <li className="claim-preview" disabled>
         <div className="placeholder media__thumb" />

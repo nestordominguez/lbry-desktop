@@ -6,7 +6,7 @@ import { makeSelectClientSetting } from 'redux/selectors/settings';
 import ClaimListDiscover from './view';
 
 const select = state => ({
-  uris: selectLastClaimSearchUris(state),
+  claimSearchByQuery: selectLastClaimSearchUris(state),
   loading: selectFetchingClaimSearch(state),
   subscribedChannels: selectSubscriptions(state),
   showNsfw: makeSelectClientSetting(SETTINGS.SHOW_NSFW)(state),

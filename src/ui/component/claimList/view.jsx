@@ -104,7 +104,7 @@ export default function ClaimList(props: Props) {
         <ul>
           {sortedUris.map((uri, index) => (
             <React.Fragment key={uri}>
-              <ClaimPreview uri={uri} type={type} placeholder={loading && (!page || page === 1)} />
+              <ClaimPreview uri={uri} type={type} placeholder={loading} />
               {index === 4 && injectedItem && <li className="claim-preview--injected">{injectedItem}</li>}
             </React.Fragment>
           ))}
